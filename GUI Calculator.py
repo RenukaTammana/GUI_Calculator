@@ -6,7 +6,7 @@ class Example:
         self.window.title("Calculator")
         self.window.geometry("250x500")
         self.window.resizable(0,0)
-        # Create a button
+      
         self.button1 = tk.Button(self.window, width = 5, height = 3,fg="white",bg="grey",text="1")
         self.button1.bind("<Button-1>", lambda event: self.on_click(event, "1"))
         self.button2 = tk.Button(self.window,width = 5, height = 3,fg="white",bg="grey", text="2")
@@ -43,12 +43,12 @@ class Example:
         
         self.buttonclr = tk.Button(self.window,width = 2, height = 2,fg="red",text="Clear")
         self.buttonclr.bind("<Button-1>",lambda event: self.on_click(event,"Clear"))
-        # Create a text box
+     
         
         self.text_box = tk.Entry(self.window,font = ('Arial',20,'bold'),width=10)
 
-        # Pack the button and text box
-        #self.button1.grid(row=1,column=1)
+        
+        
         self.text_box.grid(row=0,column=0,columnspan=4,sticky="ew")
         self.buttonclr.grid(row=1,column=0,columnspan=4,sticky="ew")
         self.button1.grid(row=2,column=0,sticky="ew")
@@ -71,7 +71,7 @@ class Example:
         self.window.grid_columnconfigure(0, weight=0)
     def on_click(self, event,text):
         button_value = text
-        # Get the current value of the text box
+   
         current_value = self.text_box.get()
         if button_value=="=":
             try:
@@ -85,7 +85,7 @@ class Example:
         elif button_value=="Clear":
             self.text_box.delete(0, tk.END)
         else:
-        # Set the value of the text box
+     
             self.text_box.delete(0, tk.END)
             self.text_box.insert(0, current_value + button_value)
 
